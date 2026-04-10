@@ -3,7 +3,7 @@
     RootModule = 'MCSAssessment.psm1'
 
     # Version number of this module.
-    ModuleVersion = '0.3.3'
+    ModuleVersion = '0.4.0'
 
     # ID used to uniquely identify this module
     GUID = 'a1b2c3d4-e5f6-7890-abcd-ef1234567890'
@@ -23,6 +23,26 @@
     # Minimum version of the PowerShell engine required by this module
     PowerShellVersion = '7.1'
 
+    # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
+    NestedModules = @(
+        'src/Assessment/Cleanup.psm1',
+        'src/Assessment/Compress.psm1',
+        'src/Assessment/Inventory.psm1',
+        'src/Assessment/MCSB.psm1',
+        'src/Assessment/MDC.psm1',
+        'src/Assessment/PSRule.psm1',
+        'src/Assessment/WARA.psm1',
+        'src/Report/ConnectAzure.psm1',
+        'src/Report/Metro.psm1',
+        'src/Report/PPTTemplate.psm1',
+        'src/Report/Slide1.psm1',
+        'src/Report/Slide6.psm1',
+        'src/Report/Slide7.psm1',
+        'src/Report/Build-MCSHighImpactSlide.psm1',
+        'src/Report/Build-MCSMediumImpactSlide.psm1',
+        'src/Report/Build-MCSLowImpactSlide.psm1',
+        'src/Report/SubscriptionList.psm1')
+
     # Functions to export from this module
     FunctionsToExport = @('*')
 
@@ -30,7 +50,7 @@
     CmdletsToExport = @()
 
     # Modules that must be imported into the global environment prior to importing this module
-    RequiredModules = @('ImportExcel','AzureResourceInventory','Az.CostManagement','WARA')
+    RequiredModules = @('ImportExcel','AzureResourceInventory','Az.CostManagement','WARA','PSRule','Metro.AI')
 
     # Variables to export from this module
     VariablesToExport = @()
@@ -54,7 +74,7 @@
             # ReleaseNotes = ''
 
             # Prerelease string of this module
-            Prerelease = 'Beta3'
+            #Prerelease = ''
         }
     }
 }
